@@ -1,3 +1,3 @@
 module.exports.profile=function(req,res){
-    return res.end('user proffile');
+    return res.render('profile',{title:'wow'});
 }
