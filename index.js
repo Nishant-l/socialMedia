@@ -2,6 +2,7 @@ const express = require('express');
 const expressEjsLayouts = require('express-ejs-layouts');
 const app = express();
 const port=8000;
+const db=require('./config/mongoose')
 
 app.use(express.static('./assets'));
 // to use ejs layouts
@@ -19,7 +20,7 @@ app.set('view engine','ejs');
 
 app.listen(port,function(err){
     if(err){
-        console.log(`error occured in server starting ______----------_______${err}`);
+        console.log(`❌ error occured in server starting ______----------_______${err}`);
     }
-    console.log(`server is running on port ${port}`);
+    console.log(`✔️ server is running on port ${port}`);
 })
