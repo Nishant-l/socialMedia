@@ -4,19 +4,22 @@ header{
    /* border-top: 10px solid black; */
    margin-bottom: 3px;
    /* border-bottom: 0.3px solid black; */
+   display: flex;
+   flex-direction: row;
 }
 ul{
+    width: 85vw;
     display: flex;
+    justify-content: flex-end;
 }
 li{
     padding-left: 20px;
 }
 #Heading{
-    padding-left: 0px;
+    padding: 4px;
     border-top: 4px solid black;
     border-bottom: 4px solid black;
     font-size: larger;
-    margin-right: 68%;
     margin-left: 2%;
     width: 10%;
     text-align: center;

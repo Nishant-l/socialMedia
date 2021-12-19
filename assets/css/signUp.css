@@ -1,0 +1,10 @@
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: auto;
+}
+#tital{
+    text-align: center;
+    margin-top: 10vh;
+}
