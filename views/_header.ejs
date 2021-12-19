@@ -1,3 +1,23 @@
+<link rel="stylesheet" href="/css/header.css">
 <header>
-    <h4>Header</h4>
+    <ul class="nav nav-pills">
+        <li class="nav-item" id="Heading">SOCIAL</li>
+        <%if(locals.user){%>
+            <li class="nav-item">
+                <a class="nav-link active"  href="/users/profile"><%= locals.user.name %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/users/destroy-session">Sign Out</a>
+            </li>
+            <%}%>
+            <%if(!locals.user){%>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/users/signIn">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/users/signUp">Sign Up</a>
+                </li>
+            <%}%>
+        
+    </ul>
 </header>
