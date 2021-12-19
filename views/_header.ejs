@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/header.css">
 <header>
+    <h2 id="Heading">👋 SOCIAL 🤝</h2>
     <ul class="nav nav-pills">
-        <li class="nav-item" id="Heading">SOCIAL</li>
         <%if(locals.user){%>
             <li class="nav-item">
                 <a class="nav-link active"  href="/users/profile"><%= locals.user.name %></a>
@@ -20,4 +20,5 @@
             <%}%>
         
     </ul>
+
 </header>
