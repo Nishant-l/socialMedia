@@ -1,7 +1,9 @@
 const User=require('../model/user');
+
 module.exports.profile=function(req,res){
     return res.render('profile',{title:'wow'});
 }
+
 module.exports.signUp=function(req,res){
     if(req.isAuthenticated()){
         res.redirect('/users/profile');
@@ -50,5 +52,5 @@ module.exports.create=function(req,res){
 }
 
 module.exports.createSession=function(req,res){
-    return res.redirect('/');
+    return res.redirect('/users/profile');
 }

@@ -8,6 +8,7 @@ const db=require('./config/mongoose');
 const session=require('express-session');
 const passport=require('passport');
 const passportLocal=require('./config/pasport-local-strategy');
+const MongoStore = require('connect-mongo');
 
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -25,7 +26,7 @@ app.set('layout extractScripts',true);
 app.set('views','./views');
 app.set('view engine','ejs');
 
-// 
+// mongostore is used to store session cookie
 app.use(session({
     name:'social',
     secret:'nishant11',
@@ -33,7 +34,11 @@ app.use(session({
     resave:false,
     cookie:{
         maxAge:(1000*60*100)
-    }
+    },
+    store:MongoStore.create({
+        mongoUrl:db.client.s.url,
+        autoRemove: 'disabled'
+    },(err)=>console.log(`error connecting to mongoDb during session creation ${err}`))
 }));
 
 app.use(passport.initialize());
