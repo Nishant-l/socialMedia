@@ -7,7 +7,7 @@ header{
    display: flex;
    flex-direction: row;
 }
-ul{
+header ul{
     width: 85vw;
     display: flex;
     justify-content: flex-end;

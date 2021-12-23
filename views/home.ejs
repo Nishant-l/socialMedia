@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/home.css">
-<h1>👋 codial/ <%= title %> 🤝</h1>
+<h1>👋  Social/<%= title %> 🤝</h1>
 
 <section id="main-container">
     <section id="section1">
@@ -8,13 +8,25 @@
 
     <section id="feed-posts"  class="shadow-lg p-3 mb-5 bg-body rounded">
     <h4>Posts ✍️</h4>
-    <form action="" id="new-post-form" method="post">
+    <form action="/post/create" id="new-post-form" method="post">
         <div class="input-group">
             <span class="input-group-text" style="max-width: 19%;">Enter <br>A <br> Post</span>
             <textarea class="form-control" aria-label="With textarea" name="content" cols="30" rows="3" placeholder="..."></textarea>
             <button class="btn btn-outline-secondary" type="submit"> Post✌️ </button>
         </div>
     </form>
+    <div>
+        <ul>
+            <%for(let i of posts){%>
+                <li>
+                    <p>
+                        <%= i.comment %>
+                        <%= i.user.name %>
+                    </p>
+                </li>
+            <%}%>
+        </ul>
+    </div>
     </section>
 
     <section id="section2">
