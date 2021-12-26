@@ -37,7 +37,7 @@ form{
 #posts-display-container{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
 }
 #posts-display-container #card-body-container{
@@ -62,13 +62,64 @@ form{
 }
 
 #comments-writer{
-    text-align: end;
+    text-align: left;
+    margin-bottom: 7%;
     font-size: small;
     font-family: sans-serif;
     font-weight: 800;
     color: #777;
-    /* text-decoration:underline; */
+    /* text-decoration: underline; */
     /* border: 2px solid blueviolet; */
     width: 100%;
+    display: flex;
 }
 
+#avtar-post{
+    height: 40px;
+    width: 40px;
+    background-color: #777;
+    border-radius: 50%;
+    margin-right: 3%;
+
+}
+
+#writers-name{
+    font-weight: 100;
+    font-size: 17px;
+}
+
+#avtar-post img{
+    height: 40px;
+    width: 40px;
+    background-color: #777;
+    border-radius: 50%;
+    margin-right: 3%;
+}
+
+#posts-container {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+}
+
+#posts-container form {
+    display: flex;
+    /* border: 2px solid red; */
+    width: 80%;
+    flex-direction: row;
+    border-bottom: none;
+    margin-top: 10%;
+}
+
+#posts-container form button{
+    width: 20%;
+    height: 100%;
+    font-size: 70%;
+    padding: 2px;
+}
+
+#posts-container form input{
+    width: 80%;
+}

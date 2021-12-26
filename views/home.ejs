@@ -29,11 +29,26 @@
                 <div id="card-body-container" class="card shadow-sm p-3 mb-2 bg-body rounded" style="width: 70%;">
                     <div class="card-body" id="comments-container">
                         <div id="comments-writer">
-                           Auther: <%= i.user.name %>
+                            <div id="avtar-post">
+                                <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?ezimgfmt=rs:256x256/rscb2/ng:webp/ngcb2" alt="Sarthak" class="chakra-avatar__img css-3a5bz2">
+                            </div>
+                            <div id="writers-name">
+                                <%= i.user.name %>
+                            </div>
                         </div>
                         <div id="comments-body">
                             <%= i.comment %>
                         </div>
+                    </div>
+                    <div id="posts-container">
+                        <%if(locals.user){%>
+                            <form action="" method="post">
+                                <!-- <label for="comment-on-post">Comment</label> -->
+                                <input class="form-control form-control-sm" id="comment-on-post" type="text" name="comment" placeholder="Type heare to add coment...">
+                                <input id="hidden-input" type="hidden" name="post" value="<%= i.id %>">
+                                <button type="submit" class="btn btn-dark">Comment</button>
+                            </form>
+                        <%}%>
                     </div>
                 </div>
             <%}%>

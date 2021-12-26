@@ -11,7 +11,7 @@ const commentSchama = mongoose.Schema({
         ref: "user"
     },
     post: {
-        type: mongoose.Schema.type.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Post",
         required: true
     }
