@@ -2,11 +2,14 @@ h1{
     text-align: center;
     margin-top: 1vh;
 }
+form{
+    padding-bottom: 30px;
+    border-bottom: 2px dotted #777;
+}
 #main-container{
     width: 90%;
     min-height: 80%;
     display: flex;
-    /* border: 2px solid rgb(125, 226, 43); */
     justify-content: space-around;
     margin: auto;
 
@@ -31,3 +34,41 @@ h1{
     align-items: center;
     margin-top: 3vh;
 }
+#posts-display-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#posts-display-container #card-body-container{
+    display: flex;
+    margin-top: 20px;    
+}
+
+#comments-container{
+    display: flex;
+    flex-direction: column;
+    max-height: 70vh;
+    min-height: 20vh;
+}
+
+#comments-body{
+    /* border: 2px solid red; */
+    text-align: left;
+    width: 100%;
+    overflow: scroll;
+    text-indent: 1px;
+    font-family: sans-serif,Helvetica, Arial, sans-serif;
+}
+
+#comments-writer{
+    text-align: end;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: 800;
+    color: #777;
+    /* text-decoration:underline; */
+    /* border: 2px solid blueviolet; */
+    width: 100%;
+}
+

@@ -7,25 +7,36 @@
     </section>
 
     <section id="feed-posts"  class="shadow-lg p-3 mb-5 bg-body rounded">
-    <h4>Posts ✍️</h4>
+    <h4>Write A Posts ✍️</h4>
     <form action="/post/create" id="new-post-form" method="post">
         <div class="input-group">
             <span class="input-group-text" style="max-width: 19%;">Enter <br>A <br> Post</span>
             <textarea class="form-control" aria-label="With textarea" name="content" cols="30" rows="3" placeholder="..."></textarea>
-            <button class="btn btn-outline-secondary" type="submit"> Post✌️ </button>
+            <%if(locals.user){%>
+                <button class="btn btn-outline-secondary" type="submit"> Post✌️ </button>
+            <%}%>
+            <script>
+                let a=()=>alert('Please Logoin to Post a Post')
+            </script>
+            <%if(!locals.user){%>
+                <button class="btn btn-outline-secondary" type="button" onclick="a()" > Post✌️ </button>
+            <%}%>
         </div>
     </form>
-    <div>
-        <ul>
+    <h4>Brouse Posts 👀 </h4>
+    <div id="posts-display-container">
             <%for(let i of posts){%>
-                <li>
-                    <p>
-                        <%= i.comment %>
-                        <%= i.user.name %>
-                    </p>
-                </li>
+                <div id="card-body-container" class="card shadow-sm p-3 mb-2 bg-body rounded" style="width: 70%;">
+                    <div class="card-body" id="comments-container">
+                        <div id="comments-writer">
+                           Auther: <%= i.user.name %>
+                        </div>
+                        <div id="comments-body">
+                            <%= i.comment %>
+                        </div>
+                    </div>
+                </div>
             <%}%>
-        </ul>
     </div>
     </section>
 
