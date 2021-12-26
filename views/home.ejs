@@ -30,7 +30,7 @@
                     <div class="card-body" id="comments-container">
                         <div id="comments-writer">
                             <div id="avtar-post">
-                                <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?ezimgfmt=rs:256x256/rscb2/ng:webp/ngcb2" alt="Sarthak" class="chakra-avatar__img css-3a5bz2">
+                                <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?ezimgfmt=rs:256x256/rscb2/ng:webp/ngcb2" alt="Sarthak">
                             </div>
                             <div id="writers-name">
                                 <%= i.user.name %>
@@ -42,7 +42,7 @@
                     </div>
                     <div id="posts-container">
                         <%if(locals.user){%>
-                            <form action="" method="post">
+                            <form action="/comment/create" method="post">
                                 <!-- <label for="comment-on-post">Comment</label> -->
                                 <input class="form-control form-control-sm" id="comment-on-post" type="text" name="comment" placeholder="Type heare to add coment...">
                                 <input id="hidden-input" type="hidden" name="post" value="<%= i.id %>">
