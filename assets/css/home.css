@@ -96,12 +96,28 @@ form{
     margin-right: 3%;
 }
 
+#container-for-comments{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* border: 2px solid red; */
+}
+
 #posts-container {
     /* border: 2px solid black; */
     display: flex;
     flex-direction: row;
+    width: 100%;
     justify-content: end;
 
+}
+
+#posted-comments {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+    /* border: 2px solid greenyellow; */
 }
 
 #posts-container form {
@@ -110,7 +126,27 @@ form{
     width: 80%;
     flex-direction: row;
     border-bottom: none;
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom: -15px;
+}
+
+#comment-avtar img{
+    height: 30px;
+    width: 30px;
+}
+
+#comment-writers-name{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid blue; */
+    width: 100%;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+
+#comment-writers-name-name{
+    color: #777;
+    font-size: 10px;
 }
 
 #posts-container form button{
