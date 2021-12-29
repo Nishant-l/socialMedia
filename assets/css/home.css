@@ -88,6 +88,15 @@ form{
     font-size: 17px;
 }
 
+#comment-content-body{
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    margin-left: 10%;
+    text-align: left;
+
+}
+
 #avtar-post img{
     height: 40px;
     width: 40px;
