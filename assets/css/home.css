@@ -43,6 +43,7 @@ form{
 #posts-display-container #card-body-container{
     display: flex;
     margin-top: 20px;    
+    width: 70%;
 }
 
 #comments-container{
@@ -154,8 +155,18 @@ form{
 }
 
 #comment-writers-name-name{
+    display: flex;
     color: #777;
     font-size: 10px;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+#modification-tab-comment {
+    font-size: medium;
 }
 
 #posts-container form button{
@@ -167,4 +178,46 @@ form{
 
 #posts-container form input{
     width: 80%;
+}
+
+#modification-tab{
+    position: absolute;
+    margin-left: 77%;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    #feed-posts {
+        /* border: 2px solid red; */
+        width: 97%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3vh;
+    }
+    #main-container{
+        width: 100%;
+        min-height: 80%;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+    
+    }
+    #section1{
+        width: 5%;
+        /* border-right: 2px solid red; */
+    }
+    #section2{
+        width: 5%;
+        /* border-left: 2px solid red; */
+    }
+    #new-post-form{
+        width: 90%;
+    }
+    #posts-display-container #card-body-container {
+        display: flex;
+        margin-top: 20px;
+        width: 95%;
+    }
 }

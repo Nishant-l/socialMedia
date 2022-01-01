@@ -2,11 +2,17 @@
 <h1>👋  Social/<%= title %> 🤝</h1>
 
 <section id="main-container">
+    <!-- ----------------------------------------------left----------------------------------------------------------------------------- -->
     <section id="section1">
 
     </section>
+    <!-- ----------------------------------------------left----------------------------------------------------------------------------- -->
 
+
+    <!-- ----------------------------------------------Middle----------------------------------------------------------------------------- -->
     <section id="feed-posts"  class="shadow-lg p-3 mb-5 bg-body rounded">
+
+        <!-- ----------------------------------------------Post_Input_form----------------------------------------------------------------------------- -->
     <h4>Write A Posts ✍️</h4>
     <form action="/post/create" id="new-post-form" method="post">
         <div class="input-group">
@@ -23,10 +29,14 @@
             <%}%>
         </div>
     </form>
+        <!-- ----------------------------------------------Post_Input_form----------------------------------------------------------------------------- -->
+
+
+        <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
     <h4>Brouse Posts 👀 </h4>
     <div id="posts-display-container">
             <%for(let i of posts){%>
-                <div id="card-body-container" class="card shadow-sm p-3 mb-2 bg-body rounded" style="width: 70%;">
+                <div id="card-body-container" class="card shadow-sm p-3 mb-2 bg-body rounded">
                     <div class="card-body" id="comments-container">
                         <div id="comments-writer">
                             <div id="avtar-post">
@@ -34,6 +44,12 @@
                             </div>
                             <div id="writers-name">
                                 <%= i.user.name %>
+                            </div>
+                            <div id="modification-tab">
+                                <%if(locals.user && i.user.id == locals.user.id){%>  
+                                    <a href="" style=" font-size: large; margin-right: 10px;">🖊</a>
+                                    <a href="/post/destroy/<%= i.id %>" style="font-size: medium;">🗑</a>
+                                 <%}%>
                             </div>
                         </div>
                         <div id="comments-body">
@@ -57,8 +73,16 @@
                                     <div id="comment-writers-name-name">
                                         <div id="comment-avtar" style="display: inline;">
                                             <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?ezimgfmt=rs:256x256/rscb2/ng:webp/ngcb2" alt="Sarthak">
+                                            
+                                                <%= j.user.name %>
+                                            
                                         </div>
-                                        <%= j.user.name %>
+                                        <div id="modification-tab-comment">
+                                            <%if(locals.user && j.user.id == locals.user.id){%>  
+                                                <a href="" style=" font-size: large; margin-right: 10px;">🖊</a>
+                                                <a href="/post/destroy/<%= i.id %>" style="font-size: medium;">🗑</a>
+                                             <%}%>
+                                        </div>
                                     </div>
                                     <div id="comment-content-body">
                                         <%= j.comment %>
@@ -70,9 +94,15 @@
                 </div>
             <%}%>
     </div>
-    </section>
+        <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
 
+    </section>
+    <!-- ----------------------------------------------Middle----------------------------------------------------------------------------- -->
+
+    <!-- ----------------------------------------------Right----------------------------------------------------------------------------- -->
     <section id="section2">
 
     </section>
+    <!-- ----------------------------------------------Right----------------------------------------------------------------------------- -->
+
 </section>
