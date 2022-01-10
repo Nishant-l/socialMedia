@@ -17,11 +17,24 @@ li{
 }
 #Heading{
     padding: 4px;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
+    border-top: 4px solid #1ed760;
+    border-bottom: 4px solid #1ed760;
     font-size: larger;
     margin-left: 2%;
     width: 10%;
     text-align: center;
     font-weight: 900;
+}
+
+@media only screen and (max-width: 1500px){
+    #Heading{
+        padding: 4px;
+        border-top: 4px solid #1ed760;
+        border-bottom: 4px solid #1ed760;
+        font-size: larger;
+        margin-left: 2%;
+        width: 25%;
+        text-align: center;
+        font-weight: 900;
+    }
 }

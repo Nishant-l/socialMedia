@@ -4,7 +4,7 @@ h1{
 }
 form{
     padding-bottom: 30px;
-    border-bottom: 2px dotted #777;
+    /* border-bottom: 2px dotted #777; */
 }
 #main-container{
     width: 98%;
@@ -15,19 +15,20 @@ form{
 
 }
 #section1{
-    width: 15%;
+    width: 18%;
     /* border-right: 2px solid red; */
 }
 #section2{
-    width: 15%;
+    width: 18%;
     /* border-left: 2px solid red; */
 }
 #new-post-form{
-    width: 80%;
+    width: 95%;
+    margin: auto;
 }
 #feed-posts{
     /* border: 2px solid red; */
-    width: 60%;
+    width: 58%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -40,7 +41,7 @@ form{
     flex-direction: column-reverse;
     align-items: center;
 }
-#posts-display-container #card-body-container{
+#posts-display-container .card-body-container{
     display: flex;
     margin-top: 20px;    
     width: 70%;
@@ -182,14 +183,21 @@ form{
 
 #modification-tab{
     position: absolute;
-    margin-left: 77%;
+    margin-left: 82%;
+}
+
+article{
+    border-right: 4px solid #3c3a3a;
+    border-bottom: 4px solid #3c3a3a;
+    background-color: #121212;
+
 }
 
 
 @media only screen and (max-width: 1000px) {
     #feed-posts {
         /* border: 2px solid red; */
-        width: 97%;
+        width: 60%;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -205,20 +213,27 @@ form{
     
     }
     #section1{
-        width: 5%;
+        width: 20%;
+        margin-top: 3%;
         /* border-right: 2px solid red; */
     }
     #section2{
-        width: 5%;
+        width: 0%;
         /* border-left: 2px solid red; */
     }
     #new-post-form{
         width: 90%;
     }
-    #posts-display-container #card-body-container {
+    #posts-display-container .card-body-container {
         display: flex;
         margin-top: 20px;
         width: 95%;
+    }
+    #comments-container {
+        display: flex;
+        flex-direction: column;
+        max-height: 70vh;
+        min-height: 10vh;
     }
 }
 

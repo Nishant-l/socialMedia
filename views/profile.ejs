@@ -1,14 +1,58 @@
 <link rel="stylesheet" href="/css/user_profile.css">
 <%if(user.id == foundUser.id){%>
-    <h1>MY INFO</h1>
-    <form action="">
-        <input type="email" name="email" value="<%= foundUser.email%>">
-        <input type="text" name="name" id="" value="<%= foundUser.name%>">
-        <input type="submit" name="" id="">
-    </form>
+    <section class="hero is-black  is-fullheight">
+        <div class="hero-body">
+          <div class="" style="margin-top: 5%;">
+            <p class="title">
+                MY INFO
+            </p>
+            <p class="subtitle">
+              Update your Info
+            </p>
+          </div>
+          <form action="" class="box" id="profile-form">
+            <div class="mb-3">
+              <label style="color: aliceblue;"  for="email" class="form-label">Email address</label>
+              <input class="form-control" id="email" type="email" name="email" value="<%= foundUser.email%>">
+            </div>
+
+            <div class="mb-3">
+              <label style="color: aliceblue;"  for="name" class="form-label">Name</label>
+              <input  class="form-control" type="text" name="name" id="name" value="<%= foundUser.name%>">
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">UPDATE</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    
 <%}%>
 <%if(user.id != foundUser.id){%>
-    <h1>User Info</h1>
-    <h1><%= foundUser.email%></h1>
-    <h1><%= foundUser.name%></foundUser.name></h1>    
+  <section class="hero is-black  is-fullheight">
+    <div class="hero-body">
+      <div class="">
+        <p class="title">
+            Users Info
+        </p>
+        <p class="subtitle">
+          View
+        </p>
+      </div>
+      <form action="" class="box" id="profile-form">
+        <fieldset disabled>
+          <div class="mb-3">
+            <label style="color: aliceblue;"  for="email" class="form-label">Email address</label>
+            <input class="form-control" id="email" type="email" name="email" value="<%= foundUser.email%>">
+          </div>
+  
+          <div class="mb-3">
+            <label style="color: aliceblue;"  for="name" class="form-label">Name</label>
+            <input class="form-control" type="text" name="name" id="name" value="<%= foundUser.name%>">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>   
 <%}%>

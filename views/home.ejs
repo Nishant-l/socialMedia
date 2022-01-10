@@ -4,59 +4,61 @@
 <section id="main-container">
     <!-- ----------------------------------------------left----------------------------------------------------------------------------- -->
     <section id="section1">
-        <article class="panel is-danger" id="friendsContainer">
-            <p class="panel-heading">
-                Friends
-            </p>
-            <%if(locals.user){%>
+        <%if(locals.user){%>
+            <article class="panel is-danger" id="friendsContainer">
+                <p class="panel-heading">
+                    Friends
+                </p>
             
-                    <%for(aUser of allUser){%>
-                        <%if(aUser.id != user.id){%>
-                          
-                           <a class="panel-block is-active" href="/users/profile/<%= aUser.id %>">👤 <%= aUser.name %></a>
+                <%for(aUser of allUser){%>
+                    <%if(aUser.id != user.id){%>
                         
-                        <%}%>
+                        <a class="panel-block is-active" href="/users/profile/<%= aUser.id %>">👤 <%= aUser.name %></a>
+                    
                     <%}%>
+                <%}%>
     
+            </article>
             <%}%>
-        </article>
     </section>
     <!-- ----------------------------------------------left----------------------------------------------------------------------------- -->
 
 
     <!-- ----------------------------------------------Middle----------------------------------------------------------------------------- -->
-    <section id="feed-posts"  class="shadow-lg p-3 mb-5 bg-body rounded">
-
-        <!-- ----------------------------------------------Post_Input_form----------------------------------------------------------------------------- -->
-    <h4 class="subtitle is-3">Write A Posts ✍️</h4>
-    <form action="/post/create" id="new-post-form" method="post">
-        <div class="input-group">
-            <span class="input-group-text" style="max-width: 19%;">Enter <br>A <br> Post</span>
-            <textarea class="form-control" aria-label="With textarea" name="content" cols="30" rows="3" placeholder="..."></textarea>
-            <%if(locals.user){%>
-                <button class="btn btn-outline-secondary" type="submit"> Post✌️ </button>
-            <%}%>
-            <script>
-                let a=()=>alert('Please Logoin to Post a Post')
-            </script>
-            <%if(!locals.user){%>
-                <button class="btn btn-outline-secondary" type="button" onclick="a()" > Post✌️ </button>
-            <%}%>
-        </div>
-    </form>
-        <!-- ----------------------------------------------Post_Input_form----------------------------------------------------------------------------- -->
-
-
-        <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
-    <h4 class="subtitle is-3">Brouse Posts 👀 </h4>
-    <div id="posts-display-container">
-            <%for(i of posts){%>
-                <%- include('_post') -%>
-            <%}%>
-    </div>
-        <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
-
-    </section>
+    <section id="feed-posts" >
+        <article class="panel is-primary" style="width: 100%;">
+            <h4 class="panel-heading">Write A Posts ✍️</h4>
+            <div class="panel-block">
+                <form action="/post/create" id="new-post-form" method="post">
+                    <div class="input-group" style="margin-top: 3%;">
+                        <span class="input-group-text" style="max-width: 19%;">Enter <br>A <br> Post</span>
+                        <textarea class="form-control" aria-label="With textarea" name="content" cols="30" rows="3" placeholder="..."></textarea>
+                        <%if(locals.user){%>
+                            <button class="btn btn-outline-secondary" type="submit"> Post✌️ </button>
+                        <%}%>
+                        <script>
+                            let a=()=>alert('Please Logoin to Post a Post')
+                        </script>
+                        <%if(!locals.user){%>
+                            <button class="btn btn-outline-secondary" type="button" onclick="a()" > Post✌️ </button>
+                        <%}%>
+                    </div>
+                </form>
+            </div>
+                <!-- ----------------------------------------------Post_Input_form----------------------------------------------------------------------------- -->
+                <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
+            </article>
+            
+            <article class="panel is-warning" style="width: 100%;">
+        
+                <h4 class="panel-heading">Brouse Posts 👀 </h4>
+                <div id="posts-display-container">
+                        <%for(i of posts){%>
+                            <%- include('_post') -%>
+                        <%}%>
+                </div>
+            </article>
+        </section>
     <!-- ----------------------------------------------Middle----------------------------------------------------------------------------- -->
 
     <!-- ----------------------------------------------Right----------------------------------------------------------------------------- -->

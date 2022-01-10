@@ -3,6 +3,7 @@ form{
     flex-direction: column;
     width: 40vw;
     margin: auto;
+    margin-top: 5%;
 }
 #tital{
     text-align: center;
