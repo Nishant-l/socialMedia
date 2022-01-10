@@ -1,7 +1,9 @@
 const User=require('../model/user');
 
 module.exports.profile=function(req,res){
-    return res.render('profile',{title:'wow'});
+    User.findById(req.params.id,(err,foundUser)=>{
+        return res.render('profile',{title:'wow',foundUser:foundUser});
+    })
 }
 
 module.exports.signUp=function(req,res){
@@ -52,7 +54,7 @@ module.exports.create=function(req,res){
 }
 
 module.exports.createSession=function(req,res){
-    return res.redirect('/users/profile');
+    return res.redirect('/');
 }
 
 module.exports.destroySession = (req,res) => {

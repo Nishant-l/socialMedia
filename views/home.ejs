@@ -1,10 +1,25 @@
 <link rel="stylesheet" href="/css/home.css">
-<h1>👋  Social/<%= title %> 🤝</h1>
+<h1 class="title is-1">👋  Social/<%= title %> 🤝</h1>
 
 <section id="main-container">
     <!-- ----------------------------------------------left----------------------------------------------------------------------------- -->
     <section id="section1">
-
+        <article class="panel is-danger" id="friendsContainer">
+            <p class="panel-heading">
+                Friends
+            </p>
+            <%if(locals.user){%>
+            
+                    <%for(aUser of allUser){%>
+                        <%if(aUser.id != user.id){%>
+                          
+                           <a class="panel-block is-active" href="/users/profile/<%= aUser.id %>">👤 <%= aUser.name %></a>
+                        
+                        <%}%>
+                    <%}%>
+    
+            <%}%>
+        </article>
     </section>
     <!-- ----------------------------------------------left----------------------------------------------------------------------------- -->
 
@@ -13,7 +28,7 @@
     <section id="feed-posts"  class="shadow-lg p-3 mb-5 bg-body rounded">
 
         <!-- ----------------------------------------------Post_Input_form----------------------------------------------------------------------------- -->
-    <h4>Write A Posts ✍️</h4>
+    <h4 class="subtitle is-3">Write A Posts ✍️</h4>
     <form action="/post/create" id="new-post-form" method="post">
         <div class="input-group">
             <span class="input-group-text" style="max-width: 19%;">Enter <br>A <br> Post</span>
@@ -33,7 +48,7 @@
 
 
         <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
-    <h4>Brouse Posts 👀 </h4>
+    <h4 class="subtitle is-3">Brouse Posts 👀 </h4>
     <div id="posts-display-container">
             <%for(i of posts){%>
                 <%- include('_post') -%>
