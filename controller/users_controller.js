@@ -1,3 +1,4 @@
+const { use } = require('passport');
 const User=require('../model/user');
 
 module.exports.profile=function(req,res){
@@ -60,4 +61,11 @@ module.exports.createSession=function(req,res){
 module.exports.destroySession = (req,res) => {
     req.logout();
     return res.redirect('/');
+}
+
+module.exports.update = (req,res) => {
+    User.findByIdAndUpdate(req.user,req.body,async(err,updatedUser)=>{
+        await console.log(updatedUser);
+        return res.redirect('back');
+    })
 }

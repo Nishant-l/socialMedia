@@ -187,10 +187,9 @@ form{
 }
 
 article{
-    border-right: 4px solid #3c3a3a;
-    border-bottom: 4px solid #3c3a3a;
-    background-color: #121212;
-
+    border-right: 9px solid #000000;
+    border-bottom: 9px solid #000000;
+    background-color: #2b2929;
 }
 
 

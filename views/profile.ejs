@@ -2,7 +2,7 @@
 <%if(user.id == foundUser.id){%>
     <section class="hero is-black  is-fullheight">
         <div class="hero-body">
-          <div class="" style="margin-top: 5%;">
+          <div class="" style="margin-top: -25vh; margin-left: 2%;">
             <p class="title">
                 MY INFO
             </p>
@@ -10,10 +10,10 @@
               Update your Info
             </p>
           </div>
-          <form action="" class="box" id="profile-form">
+          <form action="/users/update" class="box" id="profile-form" method="post">
             <div class="mb-3">
               <label style="color: aliceblue;"  for="email" class="form-label">Email address</label>
-              <input class="form-control" id="email" type="email" name="email" value="<%= foundUser.email%>">
+              <input class="form-control" id="email" type="email" name="email" value="<%= foundUser.email%>" required>
             </div>
 
             <div class="mb-3">
@@ -32,7 +32,7 @@
 <%if(user.id != foundUser.id){%>
   <section class="hero is-black  is-fullheight">
     <div class="hero-body">
-      <div class="">
+      <div class="" style="margin-top: -25vh; margin-left: 2%;">
         <p class="title">
             Users Info
         </p>
