@@ -1,0 +1,19 @@
+<div id="comment-writers-name" class="shadow p-3 mb-2 bg-body rounded">
+    <div id="comment-writers-name-name">
+        <div id="comment-avtar" style="display: inline;">
+            <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?ezimgfmt=rs:256x256/rscb2/ng:webp/ngcb2">
+            
+                <%= j.user.name %>
+            
+        </div>
+        <div id="modification-tab-comment">
+            <%if(locals.user && j.user.id == locals.user.id){%>  
+                <a href="" style=" font-size: large; margin-right: 10px;">🖊</a>
+                <a href="/comment/deleteComment/<%= j.id %>" style="font-size: medium;">🗑</a>
+             <%}%>
+        </div>
+    </div>
+    <div id="comment-content-body">
+        <%= j.comment %>
+    </div>
+</div>

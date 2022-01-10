@@ -35,63 +35,8 @@
         <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
     <h4>Brouse Posts 👀 </h4>
     <div id="posts-display-container">
-            <%for(let i of posts){%>
-                <div id="card-body-container" class="card shadow-sm p-3 mb-2 bg-body rounded">
-                    <div class="card-body" id="comments-container">
-                        <div id="comments-writer">
-                            <div id="avtar-post">
-                                <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?ezimgfmt=rs:256x256/rscb2/ng:webp/ngcb2" alt="Sarthak">
-                            </div>
-                            <div id="writers-name">
-                                <%= i.user.name %>
-                            </div>
-                            <div id="modification-tab">
-                                <%if(locals.user && i.user.id == locals.user.id){%>  
-                                    <a href="" style=" font-size: large; margin-right: 10px;">🖊</a>
-                                    <a href="/post/destroy/<%= i.id %>" style="font-size: medium;">🗑</a>
-                                 <%}%>
-                            </div>
-                        </div>
-                        <div id="comments-body">
-                            <%= i.comment %>
-                        </div>
-                    </div>
-                    <div id="container-for-comments">
-                        <div id="posts-container">
-                            <%if(locals.user){%>
-                                <form action="/comment/create" method="post">
-                                    <!-- <label for="comment-on-post">Comment</label> -->
-                                    <input class="form-control form-control-sm" id="comment-on-post" type="text" name="comment" placeholder="Type heare to add coment...">
-                                    <input id="hidden-input" type="hidden" name="post" value="<%= i.id %>">
-                                    <button type="submit" class="btn btn-dark">Comment</button>
-                                </form>
-                            <%}%>
-                        </div>
-                        <div id="posted-comments" >
-                            <%for(let j of i.comments){%>
-                                <div id="comment-writers-name" class="shadow p-3 mb-2 bg-body rounded">
-                                    <div id="comment-writers-name-name">
-                                        <div id="comment-avtar" style="display: inline;">
-                                            <img src="https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?ezimgfmt=rs:256x256/rscb2/ng:webp/ngcb2" alt="Sarthak">
-                                            
-                                                <%= j.user.name %>
-                                            
-                                        </div>
-                                        <div id="modification-tab-comment">
-                                            <%if(locals.user && j.user.id == locals.user.id){%>  
-                                                <a href="" style=" font-size: large; margin-right: 10px;">🖊</a>
-                                                <a href="/comment/deleteComment/<%= j.id %>" style="font-size: medium;">🗑</a>
-                                             <%}%>
-                                        </div>
-                                    </div>
-                                    <div id="comment-content-body">
-                                        <%= j.comment %>
-                                    </div>
-                                </div>
-                            <%}%>
-                        </div>
-                    </div>
-                </div>
+            <%for(i of posts){%>
+                <%- include('_post') -%>
             <%}%>
     </div>
         <!-- ----------------------------------------------Post_View----------------------------------------------------------------------------- -->
