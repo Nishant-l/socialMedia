@@ -65,7 +65,6 @@ module.exports.destroySession = (req,res) => {
 
 module.exports.update = (req,res) => {
     User.findByIdAndUpdate(req.user,req.body,async(err,updatedUser)=>{
-        await console.log(updatedUser);
         return res.redirect('back');
     })
 }
