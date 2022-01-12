@@ -7,6 +7,22 @@ module.exports.create = async(req,res) =>{
             comment: req.body.content,
             user: req.user._id
         });
+
+        const toSend = await Post.findById(post.id).populate('user') ;
+
+        if(req.xhr){
+            return res.status(200).json({
+                data:{
+                    post: {
+                        name: toSend.user.name,
+                        comment: toSend.comment,
+                        id: toSend.id
+                    }
+                },
+                message: "post Created"
+            });
+        }
+
         req.flash('success','Post Created');
         return res.redirect('back');
     }catch(err){
