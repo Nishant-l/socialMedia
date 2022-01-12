@@ -12,9 +12,11 @@ module.exports.create = async (req,res) => {
             })
             await post.comments.push(comment);
             await post.save();
+            req.flash('success','Comment on Post');
             return res.redirect('/');
         }else{
             console.log('post want to comment not found');
+            req.flash('error','Error commenting');
             return res.redirect('back');
         }
     }catch(err){
@@ -30,8 +32,10 @@ module.exports.deleteComment = async (req,res) => {
             let postId = comment.user;
             comment.remove();
             await Post.findByIdAndUpdate(postId,{$pull: {comments: req.params.id}});
+            req.flash('success','Comment Deleated');
             return res.redirect('back');
         }else{
+            req.flash('error','Error Deleting Comment');
             return res.redirect('back');
         }
     }catch(err){
