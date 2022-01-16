@@ -58,5 +58,10 @@
         )
     }
 
+    const but = document.getElementsByClassName('.commentButtonToComent');
+    but.addEventListner('click',(e)=>{
+        e.preventDefault();
+    })
+
     createPost();
 }
